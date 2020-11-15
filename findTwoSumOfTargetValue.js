@@ -12,4 +12,19 @@ let twoSum = (arr, target) => {
     }
     return temp_arr
 }
+
+let twoSum = (array, sum) => {
+    let obj = {},
+        results = []
+
+    for (let i = 0; i < array.length; i++) {
+        if (obj[array[i]]) {
+            results.push([obj[array[i]], array[i]])
+        } else {
+            obj[sum - array[i]] = array[i];
+        }
+    }
+    return results;
+}
+
 console.log(twoSum([1,2,2,3,4,5],6));
